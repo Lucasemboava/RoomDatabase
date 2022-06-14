@@ -21,6 +21,7 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_list, container, false)
 
@@ -61,10 +62,7 @@ class ListFragment : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("Yes") { _, _ ->
             mUserViewModel.deleteAllUsers()
-            Toast.makeText(
-                requireContext(),
-                "Successfully removed everything",
-                Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Successfully removed everything", Toast.LENGTH_SHORT).show()
         }
         builder.setNegativeButton("No") { _, _ -> }
         builder.setTitle("Delete everything?")

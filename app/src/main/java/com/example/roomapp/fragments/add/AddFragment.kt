@@ -40,14 +40,16 @@ class AddFragment : Fragment() {
         val firstName = addFirstName_et.text.toString()
         val lastName = addLastName_et.text.toString()
         val age = addAge_et.text
+        val uf = addUf_et.text.toString()
 
-        if(inputCheck(firstName, lastName, age)){
+        if(inputCheck(firstName, lastName, age, uf)){
             // Create User Object
             val user = User(
                 0,
                 firstName,
                 lastName,
-                Integer.parseInt(age.toString())
+                Integer.parseInt(age.toString()),
+                uf
             )
             // Add Data to Database
             mUserViewModel.addUser(user)
@@ -59,8 +61,12 @@ class AddFragment : Fragment() {
         }
     }
 
-    private fun inputCheck(firstName: String, lastName: String, age: Editable): Boolean{
-        return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && age.isEmpty())
+//    private fun inputCheck(firstName: String, lastName: String, age: Editable): Boolean{
+//        return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && age.isEmpty())
+//    }
+
+    private fun inputCheck(firstName: String, lastName: String, age: Editable, uf: String): Boolean{
+        return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && age.isEmpty() && TextUtils.isEmpty(uf))
     }
 
 }
