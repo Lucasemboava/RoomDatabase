@@ -1,6 +1,7 @@
 package com.example.roomapp.model
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
@@ -13,5 +14,6 @@ data class User(
     val firstName: String,
     val lastName: String,
     val age: Int,
+    @ColumnInfo(name = "estado")
     val uf: String? = null
 ): Parcelable
