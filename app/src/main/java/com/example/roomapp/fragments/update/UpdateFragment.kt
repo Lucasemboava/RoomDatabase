@@ -57,8 +57,8 @@ class UpdateFragment : Fragment() {
             val updatedUser = User(args.currentUser.id,
                 firstName,
                 lastName,
-                age
-                //,uf
+                age,
+                uf
             )
             // Update Current User
             mUserViewModel.updateUser(updatedUser)

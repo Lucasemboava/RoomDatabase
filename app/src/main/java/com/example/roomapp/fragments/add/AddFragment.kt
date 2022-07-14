@@ -50,7 +50,7 @@ class AddFragment : Fragment() {
                 firstName,
                 lastName,
                 Integer.parseInt(age.toString()),
-                //uf
+                uf
             )
             // Add Data to Database
             mUserViewModel.addUser(user)
