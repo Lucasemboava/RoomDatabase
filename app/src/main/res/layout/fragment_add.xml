@@ -46,6 +46,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addLastName_et" />
 
+    <EditText
+        android:id="@+id/addUf_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Uf"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/addAge_et"
+        tools:layout_editor_absoluteX="16dp" />
 
     <Button
         android:id="@+id/add_btn"
@@ -56,5 +66,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addAge_et" />
+        app:layout_constraintTop_toBottomOf="@+id/addUf_et" />
 </androidx.constraintlayout.widget.ConstraintLayout>

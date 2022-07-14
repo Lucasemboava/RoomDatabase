@@ -50,12 +50,16 @@ class UpdateFragment : Fragment() {
         val firstName = updateFirstName_et.text.toString()
         val lastName = updateLastName_et.text.toString()
         val age = Integer.parseInt(updateAge_et.text.toString())
-
-
+        val uf = updateLastName_et.text.toString()
 
         if (inputCheck(firstName, lastName, updateAge_et.text)) {
             // Create User Object
-            val updatedUser = User(args.currentUser.id, firstName, lastName, age)
+            val updatedUser = User(args.currentUser.id,
+                firstName,
+                lastName,
+                age
+                //,uf
+            )
             // Update Current User
             mUserViewModel.updateUser(updatedUser)
             Toast.makeText(requireContext(), "Updated Successfully!", Toast.LENGTH_SHORT).show()
