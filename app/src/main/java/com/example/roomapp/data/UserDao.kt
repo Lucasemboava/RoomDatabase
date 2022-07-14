@@ -16,10 +16,10 @@ interface UserDao {
     @Delete
     suspend fun deleteUser(user: User)
 
-    @Query("DELETE FROM user_table")
+    @Query("DELETE FROM user")
     suspend fun deleteAllUsers()
 
-    @Query("SELECT * FROM user_table ORDER BY id ASC")
+    @Query("SELECT * FROM user ORDER BY id ASC")
     fun readAllData(): LiveData<List<User>>
 
 }

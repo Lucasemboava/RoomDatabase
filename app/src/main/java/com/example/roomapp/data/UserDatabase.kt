@@ -7,12 +7,12 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.roomapp.model.User
 
-@Database(entities = [User::class], version = 3,
+@Database(entities = [User::class], version = 4,
 
 
     autoMigrations = [AutoMigration (from = 1, to = 2)
                       ,AutoMigration (from = 2, to = 3, spec = UserDatabase.RenameFromUfToEstado::class)
-
+                      ,AutoMigration (from = 3, to = 4, spec = UserDatabase.RenameTableFromUserTableToUser::class)
 
                      ],
 
@@ -59,5 +59,12 @@ abstract class UserDatabase : RoomDatabase() {
 //            db.execSQL("ALTER TABLE '_new_user_table' RENAME TO 'user_table'")
 //        }
 //    }
+
+    @RenameTable(
+        fromTableName = "user_table",
+        toTableName = "user",
+    )
+    class RenameTableFromUserTableToUser: AutoMigrationSpec{}
+
 
 }
